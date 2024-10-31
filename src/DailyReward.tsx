@@ -102,7 +102,7 @@ const DailyReward: React.FC<DailyRewardProps> = ({ onClose }) => {
         <p className="reward-amount text-center ">{rewardAmount}</p>
         <div className="flex gap-2 items-center justify-center">
           <img src={newLogo} alt="logo" className="w-[60px] h-[60px]" />
-          <p className="text-[#fbc688]">Point Earned</p>
+          <p className="text-[#fbc688]">BNBDOG Earned</p>
         </div>
       </div>
 

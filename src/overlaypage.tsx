@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useUser } from "./UserContext";
 import checkboxImage from "./images/check.png";
-import middleImage from "./images/daimon.png";
-import topImage from "./images/star.png";
+import { GiSittingDog } from "react-icons/gi";
 import newLogo from "./images/blanco.png";
 
 interface OverlayPageProps {
@@ -139,12 +138,12 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
 
         {/* Central Reward Display */}
         <div className="flex flex-col items-center">
-          <div className="text-[4.5rem] font-extrabold leading-none">
+          <div className="text-[4.5rem] font-extrabold leading-none text-[#fbc688]">
             {totalReward}
           </div>
           <div className="flex gap-2 items-center justify-center">
             <img src={newLogo} alt="logo" className="w-[40px] h-[40px]" />
-            <p className="text-2xl ml-2">Point Earned</p>
+            <p className="text-2xl ml-2 text-[#fbc688]">BNBDOG Earned</p>
           </div>
         </div>
 
@@ -224,7 +223,9 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
 
         {/* Top Text */}
         <div className="mt-4">
-          <h1 className="text-2xl font-bold">You are a legend!</h1>
+          <h1 className="text-2xl font-bold text-[#fbc688]">
+            You are a legend!
+          </h1>
           {/* Conditionally render based on the value of 'isStar' */}
           {isStar ? (
             <p className="text-base mt-1">Telegram star!!</p>
@@ -234,12 +235,9 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         </div>
 
         {/* Central Image */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center -mt-20 mb-32">
           {/* Bottom Text */}
-          <div className="">
-            <img src={topImage} alt="star logo" className="w-48 -mb-2 " />
-          </div>
-          <img src={middleImage} alt="Middle Image" className="w-60  z-50" />
+          <GiSittingDog size={200} className="text-[#fbc688]" />
         </div>
 
         {/* Continue Button */}
@@ -301,16 +299,18 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
 
         {/* Top Text */}
         <div className="mt-4">
-          <h1 className="text-2xl font-bold">Legendary status!</h1>
+          <h1 className="text-2xl font-bold text-[#fbc688]">
+            Legendary status!
+          </h1>
           <p className="text-base mt-1">You've joined Telegram</p>
         </div>
 
         {/* Central Large Text */}
         <div className="flex flex-col items-center">
-          <div className="text-[4.5rem] font-extrabold leading-none">
+          <div className="text-[4.5rem] font-extrabold leading-none text-[#fbc688]">
             {yearsAgo}
           </div>
-          <p className="text-2xl mt-1">years ago</p>
+          <p className="text-2xl mt-1 text-[#fbc688]">years ago</p>
         </div>
 
         {/* Bottom Text */}
