@@ -49,12 +49,12 @@ const TaskItem: React.FC<TaskItemProps> = ({
   return (
     <div
       onClick={status === "not_started" && onClick ? onClick : undefined}
-      className={`flex items-center justify-between bg-[#141111] bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-2xl p-4 mb-3 shadow-lg transition-shadow duration-300 ${
+      className={`flex items-center justify-between bg-[#141111]/30 bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-2xl p-4 mb-3 shadow-lg transition-shadow duration-300 ${
         status === "not_started" ? "cursor-pointer hover:shadow-2xl" : ""
       } ${status === "completed" ? "opacity-50 cursor-not-allowed" : ""}`}
       style={{
         backdropFilter: "blur(8px)",
-        border: "1px solid rgba(255, 255, 255, 0.15)"
+        border: "1px solid #FFFFFF3D"
       }}
     >
       {icon ? (
@@ -970,7 +970,7 @@ const App: React.FC = () => {
                     <div className="mt-4 w-auto">
                       <div className="relative">
                         <div
-                          className={`h-12 bg-[#0075d9] text-white font-bold rounded-full shadow-md hover:bg-[#F8D33A] transition-colors duration-300 flex items-center justify-center cursor-pointer px-6`}
+                          className={`h-12 bg-[#0075d9] text-white font-bold rounded-full shadow-md  transition-colors duration-300 flex items-center justify-center cursor-pointer px-6`}
                           onClick={() => {
                             if (address) {
                               tonConnectUI.disconnect();

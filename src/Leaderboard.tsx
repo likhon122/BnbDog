@@ -109,11 +109,11 @@ const LeaderboardPage: React.FC = () => {
       {" "}
       {/* Added pb-24 for bottom padding */}
       <div className="flex flex-col items-center pt-5 h-[94vh] overflow-y-scroll hide-scrollbar">
-        <h1 className="text-2xl font-bold mb-5 text-center w-full">
+        <h1 className="text-2xl font-bold mb-5 text-center w-full text-[#fbc688]">
           HALL OF FAME
         </h1>
         {ownRanking && (
-          <div className="shadow-lg w-11/12  rounded-full flex items-center justify-between px-6 py-4 mb-5  bg-[#0075d9] text-white">
+          <div className="shadow-lg w-11/12  rounded-2xl flex items-center justify-between px-6 py-4 mb-5  bg-[#0075d9] text-white">
             <div className="flex items-center">
               <div className=" rounded-full w-14 h-14 flex items-center justify-center  text-lg font-bold">
                 <RiShieldStarLine size={43} />
@@ -131,7 +131,7 @@ const LeaderboardPage: React.FC = () => {
           {leaderboardData.map((user, index) => (
             <div
               key={index}
-              className="flex items-center justify-between mb-3 p-2 bg-[#141111] bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg"
+              className="flex items-center justify-between border border-[#FFFFFF3D] mb-3 p-2 bg-[#141111] bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg"
             >
               <div className="flex items-center">
                 <div

@@ -127,7 +127,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         }}
       >
         <div
-          className="fixed inset-0 w-full h-full backdrop-blur-3xl "
+          className="fixed inset-0 w-full h-full backdrop-blur-3xl -z-10"
           style={{
             background: "radial-gradient(circle, #312726, #50412f"
           }}
@@ -168,7 +168,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
             console.log("Claim button clicked");
             closeOverlay();
           }}
-          className="px-6 py-3 bg-[#F8D33A] text-black rounded-full text-lg font-semibold mb-8"
+          className="px-6 py-3 bg-[#0075d9] text-white rounded-full text-lg font-semibold mb-8"
           style={{ width: "80%" }}
         >
           Claim
@@ -192,7 +192,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         }}
       >
         <div
-          className="fixed inset-0 w-full h-full backdrop-blur-3xl "
+          className="fixed inset-0 w-full h-full backdrop-blur-3xl -z-10"
           style={{
             background: "radial-gradient(circle, #312726, #50412f"
           }}
@@ -245,7 +245,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         {/* Continue Button */}
         <button
           onClick={() => setShowFinalPage3(true)}
-          className="px-6 py-3 bg-[#F8D33A] text-black rounded-full text-lg font-semibold mb-8"
+          className="px-6 py-3 bg-[#0075d9] text-white rounded-full text-lg font-semibold mb-8"
           style={{ width: "80%" }}
         >
           Continue
@@ -269,7 +269,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         }}
       >
         <div
-          className="fixed inset-0 w-full h-full backdrop-blur-3xl "
+          className="fixed inset-0 w-full h-full backdrop-blur-3xl -z-10"
           style={{
             background: "radial-gradient(circle, #312726, #50412f"
           }}
@@ -322,7 +322,7 @@ const OverlayPage: React.FC<OverlayPageProps> = ({
         {/* Continue Button */}
         <button
           onClick={() => setShowFinalPage2(true)}
-          className="px-6 py-3  bg-[#F8D33A] text-[#000000] rounded-full text-lg font-semibold mb-8"
+          className="px-6 py-3  bg-[#0075d9] text-white rounded-full text-lg font-semibold mb-8"
           style={{ width: "80%" }}
         >
           Continue

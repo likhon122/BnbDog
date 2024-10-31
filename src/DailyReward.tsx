@@ -86,33 +86,44 @@ const DailyReward: React.FC<DailyRewardProps> = ({ onClose }) => {
 
   return (
     <div className="daily-reward-container">
+      <div
+        className="fixed inset-0 w-full h-full backdrop-blur-3xl -z-10"
+        style={{
+          background: "radial-gradient(circle, #312726, #50412f"
+        }}
+      ></div>
       <div>
-        <h1 className="title text-3xl">Your Daily Record</h1>
+        <h1 className="title text-3xl text-[#fbc688]">Your Daily Record</h1>
         <p className="font-normal text-[#C6C6C6] text-center ">
           Come back tomorrow <br /> for new Daily bonus and new Task!
         </p>
       </div>
       <div className="reward-amount-container">
-        <p className="reward-amount text-center">{rewardAmount}</p>
+        <p className="reward-amount text-center ">{rewardAmount}</p>
         <div className="flex gap-2 items-center justify-center">
           <img src={newLogo} alt="logo" className="w-[60px] h-[60px]" />
-          <p>Point Earned</p>
+          <p className="text-[#fbc688]">Point Earned</p>
         </div>
       </div>
 
       <button
-        className="increase-reward-btn"
+        className="bg-[#0075d9] px-10 py-4 rounded-lg font-normal text-[20px]"
         onClick={() => setShowStartStore(true)}
       >
         Boosting Reward
       </button>
-      <button className="continue-btn" onClick={onClose}>
+      <button
+        className="border border-[#0075d9] rounded-lg font-normal text-[20px] px-8 py-3 mb-6 hover:bg-[#0075d9] text-[#0075d9] hover:text-white transition duration-300"
+        onClick={onClose}
+      >
         Continue
       </button>
 
-      {showStartStore && (
-        <StartStore onClose={() => setShowStartStore(false)} /> // Render StartStore when button is clicked
-      )}
+      <div className="overflow-hidden">
+        {showStartStore && (
+          <StartStore onClose={() => setShowStartStore(false)} /> // Render StartStore when button is clicked
+        )}
+      </div>
     </div>
   );
 };

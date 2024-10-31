@@ -132,14 +132,14 @@ const FriendsPage: React.FC = () => {
       <div className="w-full text-white font-bold flex flex-col max-w-xl">
         {/* Header Section */}
         <div className="text-center mt-6">
-          <h2 className="text-xl font-extrabold">
+          <h2 className="text-xl font-extrabold text-[#fbc688]">
             Invite Friends And Get More
           </h2>
-          <h3 className="text-white text-3xl">Points</h3>
+          <h3 className="text-[#fbc688] text-3xl">Points</h3>
         </div>
 
         {/* Informational Section */}
-        <div className="bg-[#1b1a1a] bg-opacity-60 backdrop-filter backdrop-blur-lg  rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 mt-4 mx-5 text-center">
+        <div className="bg-[#141111]/80 bg-opacity-60 backdrop-filter backdrop-blur-lg  rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 mt-4 mx-5 text-center border border-[#FFFFFF3D]">
           <h3 className="text-xl font-semibold text-white">
             MORE REFER
             <br />
@@ -153,7 +153,7 @@ const FriendsPage: React.FC = () => {
 
         {/* Invite Boxes Section */}
         <div className="px-4 mt-6 space-y-4">
-          <div className="bg-[#1b1a1a] bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500">
+          <div className="bg-[#141111]/80 bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 border border-[#FFFFFF3D]">
             <div className="flex items-center">
               <img
                 src={gift}
@@ -169,7 +169,7 @@ const FriendsPage: React.FC = () => {
         </div>
 
         {/* Friends List */}
-        <div className="bg-[#1b1a1a] bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 mt-4 mx-5 text-center mb-16">
+        <div className="bg-[#141111]/80 bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 mt-4 mx-5 text-center mb-16 border border-[#FFFFFF3D]">
           {" "}
           {/* Added mb-16 here */}
           <h3 className="text-center text-white">List of your friends</h3>
@@ -202,14 +202,14 @@ const FriendsPage: React.FC = () => {
           <div className="flex justify-between">
             <button
               onClick={setupInvitationLinkCopy}
-              className="bg-[#0075d9] text-white rounded-xl py-3 px-6 flex-1 mr-2 hover:bg-[#e0bb26] transition-colors duration-300"
+              className="bg-[#0075d9] text-white rounded-xl py-3 px-6 flex-1 mr-2  transition-colors duration-300"
               style={{ fontSize: "1rem", fontWeight: "bold" }}
             >
               Copy Link
             </button>
             <button
               onClick={handleInvite}
-              className="bg-[#0075d9] text-white rounded-xl py-3 px-6 flex-1 ml-2 hover:bg-[#e0bb26] transition-colors duration-300"
+              className="bg-[#0075d9] text-white rounded-xl py-3 px-6 flex-1 ml-2  transition-colors duration-300"
               style={{ fontSize: "0.85rem", fontWeight: "bold" }}
             >
               Invite Friends+
