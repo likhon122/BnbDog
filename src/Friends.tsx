@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useUser } from "./UserContext";
 import Modal from "./Modal"; // Importing the Modal component
-import gift from "./images/gift.png"; // Ensure the logo path is correct
+import { TfiGift } from "react-icons/tfi";
 
 const FriendsPage: React.FC = () => {
   const { userID, setPoints } = useUser(); // Retrieve the userID and setPoints from global context
@@ -12,7 +12,9 @@ const FriendsPage: React.FC = () => {
   const FRIEND_REWARD = 1000; // Points reward per new friend
 
   // Invitation link
-  const invitationLink = `https://t.me/BNBDOGtestbot/BNBDOG?startapp=${encodeURIComponent(userID)}`;
+  const invitationLink = `https://t.me/BNBDOGtestbot/BNBDOG?startapp=${encodeURIComponent(
+    userID
+  )}`;
 
   const handleInvite = () => {
     window.open(
@@ -47,12 +49,12 @@ const FriendsPage: React.FC = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-Telegram-Init-Data": initData, // Add initData to headers
+          "X-Telegram-Init-Data": initData // Add initData to headers
         },
         body: JSON.stringify({
           UserId: userID,
-          referrewarded: newReferrewardedCount.toString(),
-        }),
+          referrewarded: newReferrewardedCount.toString()
+        })
       });
       console.log("referrewarded updated to", newReferrewardedCount);
     } catch (error) {
@@ -70,8 +72,8 @@ const FriendsPage: React.FC = () => {
           method: "GET",
           headers: {
             Accept: "application/json",
-            "X-Telegram-Init-Data": initData, // Add initData to headers
-          },
+            "X-Telegram-Init-Data": initData // Add initData to headers
+          }
         }
       );
       const data = await response.json();
@@ -154,12 +156,13 @@ const FriendsPage: React.FC = () => {
         {/* Invite Boxes Section */}
         <div className="px-4 mt-6 space-y-4">
           <div className="bg-[#141111]/80 bg-opacity-60 backdrop-filter backdrop-blur-lg rounded-lg p-6 flex flex-col items-center shadow-2xl transition-all duration-500 border border-[#FFFFFF3D]">
-            <div className="flex items-center">
-              <img
+            <div className="flex items-start justify-center gap-4 ">
+              {/* <img
                 src={gift}
                 alt="Invite a friend"
                 className="w-12 h-12 mr-4"
-              />
+              /> */}
+              <TfiGift className="text-[31px] mt-1" />
               <div>
                 <p className="text-lg font-bold text-white">Invite a friend</p>
                 <p className="text-xs text-yellow-400">+1000 for you</p>

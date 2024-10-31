@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useUser } from "./UserContext";
+import { useTonAddress, useTonConnectUI } from "@tonconnect/ui-react";
+import { Toaster } from "react-hot-toast";
+import { BiLogoTelegram } from "react-icons/bi";
+import { BsTwitterX } from "react-icons/bs";
+import {
+  FaDiscord,
+  FaFacebookF,
+  FaUserFriends,
+  FaYoutube
+} from "react-icons/fa";
+import { FaRankingStar } from "react-icons/fa6";
+import { IoHome } from "react-icons/io5";
+import { TfiGift } from "react-icons/tfi";
 import "./App.css";
+import DailyReward from "./DailyReward";
+import FriendsPage from "./Friends";
 import { main } from "./images";
-import Modal from "./Modal";
+import newLogo from "./images/blanco.png";
+import doneIcon from "./images/done.png";
 import Leaderboard from "./Leaderboard";
 import LoadingScreen from "./LoadingScreen";
+import Modal from "./Modal";
 import OverlayPage from "./overlaypage";
-import FriendsPage from "./Friends";
-import newLogo from "./images/blanco.png";
-import discord from "./images/discord.png";
-import { Toaster } from "react-hot-toast";
-import { useTonAddress, useTonConnectUI } from "@tonconnect/ui-react";
-import telegramIcon from "./images/telegram.png";
-import xIcon from "./images/x.png";
-//import whatsappIcon from "./images/whatsapp.png";
-//import cmcIcon from "./images/cmc.png";
-//import instagramIcon from "./images/instagram.png";
-import facebookIcon from "./images/facebook.png";
-//import binanceIcon from "./images/binance.png"; // Import Binance Icon
-import doneIcon from "./images/done.png";
-import youtubeIcon from "./images/youtube.png";
-import inviteFriendsIcon from "./images/gift.png";
-import DailyReward from "./DailyReward"; // Import the DailyReward component
-import { IoHome } from "react-icons/io5";
-import { FaUserFriends } from "react-icons/fa";
-import { FaRankingStar } from "react-icons/fa6";
+import { useUser } from "./UserContext";
 
 declare const Telegram: any;
 
 interface TaskItemProps {
-  icon?: string; // Made icon optional for "Coming Soon" tasks
+  icon?: React.ReactNode | string; // Updated from 'element' to 'ReactNode'
   title: string;
   reward?: number; // Made reward optional
   status?: "not_started" | "loading" | "claimable" | "completed"; // Made status optional
@@ -58,8 +56,16 @@ const TaskItem: React.FC<TaskItemProps> = ({
       }}
     >
       {icon ? (
-        <div className="flex items-center">
-          <img src={icon} alt={title} className="w-10 h-10 mr-4" />
+        <div className="flex items-center gap-4">
+          <div className="">
+            {typeof icon === "string" ? (
+              <img className="h-12 w-12" src={icon} alt="Img" />
+            ) : (
+              <div className="text-[22px] px-[8px] py-2 rounded-lg text-white bg-[#0075d9]">
+                {icon}
+              </div>
+            )}
+          </div>
           <div className="text-white">
             <div className="font-bold text-sm">{title}</div>
             {reward !== undefined && (
@@ -723,7 +729,7 @@ const App: React.FC = () => {
         <div className="mt-6 px-4">
           {/* Task 1: Join BNBDOG TG channel */}
           <TaskItem
-            icon={telegramIcon}
+            icon={<BiLogoTelegram />}
             title="Join BNBDOG TG channel"
             reward={1000}
             status={taskStatus["task1"] || "not_started"}
@@ -735,7 +741,7 @@ const App: React.FC = () => {
 
           {/* Task 3: Join BNBDOG TG English-Chat */}
           <TaskItem
-            icon={telegramIcon}
+            icon={<BiLogoTelegram />}
             title="Join our Telegram Group"
             reward={1000}
             status={taskStatus["task3"] || "not_started"}
@@ -747,7 +753,7 @@ const App: React.FC = () => {
 
           {/* Task 5: Follow our CEO Wp channel */}
           <TaskItem
-            icon={discord}
+            icon={<FaDiscord />}
             title="Join our Discord Server"
             reward={1000}
             status={taskStatus["task5"] || "not_started"}
@@ -758,7 +764,7 @@ const App: React.FC = () => {
           />
 
           <TaskItem
-            icon={xIcon}
+            icon={<BsTwitterX />}
             title="Follow our X profile"
             reward={100}
             status={taskStatus["task7"] || "not_started"}
@@ -769,7 +775,7 @@ const App: React.FC = () => {
           />
 
           <TaskItem
-            icon={youtubeIcon}
+            icon={<FaYoutube />}
             title="Join this YouTube channel"
             reward={1000}
             status={taskStatus["task14"] || "not_started"} // Updated to task14
@@ -784,7 +790,7 @@ const App: React.FC = () => {
 
           {/* Task 12: Follow to Our CEO on Facebook */}
           <TaskItem
-            icon={facebookIcon}
+            icon={<FaFacebookF />}
             title=" Follow our Facebook group"
             reward={1000}
             status={taskStatus["task9"] || "not_started"}
@@ -814,7 +820,7 @@ const App: React.FC = () => {
 
           {/* Task 13: Invite 5 Friends */}
           <TaskItem
-            icon={inviteFriendsIcon}
+            icon={<TfiGift />}
             title="Invite 5 Friends"
             reward={5000}
             status={taskStatus["Invite5Friends"] || "not_started"}
@@ -825,7 +831,7 @@ const App: React.FC = () => {
 
           {/* Task 14: Invite 10 Friends */}
           <TaskItem
-            icon={inviteFriendsIcon}
+            icon={<TfiGift />}
             title="Invite 10 Friends"
             reward={10000}
             status={taskStatus["task10"] || "not_started"}
@@ -834,7 +840,7 @@ const App: React.FC = () => {
 
           {/* Task 15: Invite 20 Friends */}
           <TaskItem
-            icon={inviteFriendsIcon}
+            icon={<TfiGift />}
             title="Invite 20 Friends"
             reward={20000}
             status={taskStatus["task11"] || "not_started"}
@@ -843,7 +849,7 @@ const App: React.FC = () => {
 
           {/* Task 16: Invite 50 Friends */}
           <TaskItem
-            icon={inviteFriendsIcon}
+            icon={<TfiGift />}
             title="Invite 50 Friends"
             reward={50000}
             status={taskStatus["task12"] || "not_started"}
