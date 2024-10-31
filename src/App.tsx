@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useUser } from "./UserContext";
 import "./App.css";
 import { main } from "./images";
-import friendsLogo from "./images/nav-friends.png";
-import homeLogo from "./images/home.png";
-import rankingLogo from "./images/ranking.png";
 import Modal from "./Modal";
 import Leaderboard from "./Leaderboard";
 import LoadingScreen from "./LoadingScreen";
@@ -29,7 +26,6 @@ import DailyReward from "./DailyReward"; // Import the DailyReward component
 import { IoHome } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
 import { FaRankingStar } from "react-icons/fa6";
-import { TfiArrowTopRight } from "react-icons/tfi";
 
 declare const Telegram: any;
 
